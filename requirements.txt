@@ -1,0 +1,4 @@
+discord.py>=2.0.0 # discord.py 또는 사용하는 포크(nextcord, py-cord)에 맞게 조정
+google-generativeai
+python-dotenv
+pytz
