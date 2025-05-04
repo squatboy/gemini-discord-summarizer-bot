@@ -38,7 +38,7 @@ except ValueError:
 
 GEMINI_MODEL_NAME = "gemini-2.0-flash"
 MESSAGE_FETCH_LIMIT = 1000  # Maximum number of messages to fetch at once
-SUMMARY_PROMPT = """Summarize the following Discord channel conversation in Korean. Provide a concise summary focusing on important discussion points, decisions, and key activities.
+SUMMARY_PROMPT = """Summarize the following Discord channel conversation in English. Provide a concise summary focusing on important discussion points, decisions, and key activities.
 
 --- Conversation Start ---
 {text}
