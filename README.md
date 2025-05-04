@@ -4,7 +4,7 @@
 
 ## Intro
 
-This project is a Discord bot that summarizes conversation history in Discord channels using the Google Gemini model. It helps users quickly grasp the essence of long conversations, making it easier to catch up on important information or missed details. It offers both immediate summary via slash commands for specific time ranges and an automatic daily summary feature for a configured channel.
+a Discord bot that summarizes conversation history in Discord channels using the Google Gemini model. It helps users quickly grasp the essence of long conversations, making it easier to catch up on important information or missed details. It offers both immediate summary via slash commands for specific time ranges and an automatic daily summary feature for a configured channel.
 
 ## Features
 
@@ -94,7 +94,7 @@ TARGET_CHANNEL_ID=YOUR_TARGET_CHANNEL_ID_FOR_DAILY_SUMMARY
 
 ## 소개
 
-이 프로젝트는 Discord 채널의 대화 내용을 Google Gemini 모델을 활용하여 요약해 주는 Discord 봇입니다. 긴 대화 내용을 빠르게 파악하여 중요한 정보나 놓친 내용을 쉽게 확인하는 데 도움을 줍니다. 특정 시간 범위의 메시지를 즉시 요약하거나, 설정된 채널에서 매일 자동으로 전날의 대화 내용을 요약하는 기능을 제공합니다.
+Discord 채널의 대화 내용을 Google Gemini 모델을 활용하여 요약해 주는 Discord 봇입니다. 긴 대화 내용을 빠르게 파악하여 중요한 정보나 놓친 내용을 쉽게 확인하는 데 도움을 줍니다. 특정 시간 범위의 메시지를 즉시 요약하거나, 설정된 채널에서 매일 자동으로 전날의 대화 내용을 요약하는 기능을 제공합니다.
 
 ## 주요 기능
 
