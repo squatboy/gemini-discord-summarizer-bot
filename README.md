@@ -16,22 +16,6 @@ a Discord bot that summarizes conversation history in Discord channels using the
 * **`Long Message Splitting`:** Automatically splits long summary results into multiple messages to comply with Discord's message length limits.
 * **`Configurable`:** Easy configuration via environment variables for Discord token, Google API key, target channel ID
 
-## 📋 Table of Contents
-
-1.  [Project Introduction](#-project-introduction)
-2.  [Features](#-features)
-3.  [Getting Started](#-getting-started)
-    * [Prerequisites](#prerequisites)
-    * [Installation](#installation)
-4.  [Configuration](#-configuration)
-    * [.env File Setup](#env-file-setup)
-5.  [Usage](#-usage)
-    * [Slash Commands](#slash-commands)
-    * [Automatic Daily Summary](#automatic-daily-summary)
-6.  [Dependencies](#-dependencies)
-7.  [Contributing](#-contributing)
-8.  [License](#-license)
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
