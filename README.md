@@ -1,6 +1,8 @@
 🇰🇷 README [한국어](#한국어)
 
-# discord-channelmessage-summarize-bot
+<br>
+
+# `discord-channelmessage-summarize-bot`
 
 ## Intro
 
@@ -8,11 +10,11 @@ a Discord bot that summarizes conversation history in Discord channels using the
 
 ## Features
 
-* **Conversation Summarization:** Summarizes Discord channel message content using the Google Gemini API.
-* **Slash Commands:** Supports slash commands for instant summarization of messages within specific time ranges (1 hour, 6 hours, 24 hours).
-* **Automatic Daily Summary:** Automatically summarizes the previous day's conversation in a designated channel at midnight in the configured timezone.
-* **Long Message Splitting:** Automatically splits long summary results into multiple messages to comply with Discord's message length limits.
-* **Configurable:** Easy configuration via environment variables for Discord token, Google API key, target channel ID
+* **`Conversation Summarization`:** Summarizes Discord channel message content using the Google Gemini API.
+* **`Slash Commands`:** Supports slash commands for instant summarization of messages within specific time ranges (1 hour, 6 hours, 24 hours).
+* **`Automatic Daily Summary`:** Automatically summarizes the previous day's conversation in a designated channel at midnight in the configured timezone.
+* **`Long Message Splitting`:** Automatically splits long summary results into multiple messages to comply with Discord's message length limits.
+* **`Configurable`:** Easy configuration via environment variables for Discord token, Google API key, target channel ID
 
 ## 📋 Table of Contents
 
