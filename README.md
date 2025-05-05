@@ -12,6 +12,8 @@ a Discord bot that summarizes conversation history in Discord channels using the
 <img width="1067" alt="discord-bot-arch" src="https://github.com/user-attachments/assets/cf43c876-4123-40ac-8268-51cc37be6699" />
 Can be deployed in a cloud environment like above diagram. For smaller-scale deployments, it can be easily configured with free tiers or serverless services, similar to my own setup.
 
+```Use it as a reference only. Design an architecture that best suits your service's scale.```
+
 ## Features
 
 * **`Conversation Summarization`:** Summarizes Discord channel message content using the Google Gemini API.
