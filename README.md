@@ -8,6 +8,10 @@
 
 a Discord bot that summarizes conversation history in Discord channels using the Google Gemini model. It helps users quickly grasp the essence of long conversations, making it easier to catch up on important information or missed details. It offers both immediate summary via slash commands for specific time ranges and an automatic daily summary feature for a configured channel.
 
+## Deploy
+<img width="1067" alt="discord-bot-arch" src="https://github.com/user-attachments/assets/cf43c876-4123-40ac-8268-51cc37be6699" />
+Can be deployed in a cloud environment like above diagram. For smaller-scale deployments, it can be easily configured with free tiers or serverless services, similar to my own setup.
+
 ## Features
 
 * **`Conversation Summarization`:** Summarizes Discord channel message content using the Google Gemini API.
@@ -86,6 +90,11 @@ TARGET_CHANNEL_ID=YOUR_TARGET_CHANNEL_ID_FOR_DAILY_SUMMARY
 ## 소개
 
 Discord 채널의 대화 내용을 Google Gemini 모델을 활용하여 요약해 주는 Discord 봇입니다. 긴 대화 내용을 빠르게 파악하여 중요한 정보나 놓친 내용을 쉽게 확인하는 데 도움을 줍니다. 특정 시간 범위의 메시지를 즉시 요약하거나, 설정된 채널에서 매일 자동으로 전날의 대화 내용을 요약하는 기능을 제공합니다.
+
+## 배포
+<img width="1067" alt="discord-bot-arch" src="https://github.com/user-attachments/assets/cf43c876-4123-40ac-8268-51cc37be6699" />
+위 다이어그램과 같이 클라우드 환경에서 배포할 수 있으며, 소규모의 경우 저랑 비슷하게 free tier들로 구성하거나 serverless 서비스들로 간단하게 구성이 가능합니다
+
 
 ## 주요 기능
 
