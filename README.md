@@ -68,6 +68,11 @@ GOOGLE_API_KEY=YOUR_GOOGLE_GEMINI_API_KEY
 TARGET_CHANNEL_ID=YOUR_TARGET_CHANNEL_ID_FOR_DAILY_SUMMARY
 ```
 
+## Commands
+<img width="469" alt="screenshot" src="https://github.com/user-attachments/assets/33998476-c1e4-4190-aab3-4e4ffb7e0194" />
+
+
+
 <br>
 
 ---
