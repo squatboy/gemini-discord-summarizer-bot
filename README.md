@@ -10,7 +10,7 @@ a Discord bot that summarizes conversation history in Discord channels using the
 
 ## Deploy
 <img width="1067" alt="discord-bot-arch" src="https://github.com/user-attachments/assets/cf43c876-4123-40ac-8268-51cc37be6699" />
-Can be deployed in a cloud environment like above diagram. For smaller-scale deployments, it can be easily configured with free tiers or serverless services, similar to my own setup.
+Can be deployed in a cloud environment like above diagram. For 24/7 hosting & smaller-scale deployments, it can be easily configured with free tiers or serverless services, similar to my own setup.
 
 ```Use it as a reference only. Design an architecture that best suits your service's scale.```
 
@@ -95,7 +95,7 @@ Discord 채널의 대화 내용을 Google Gemini 모델을 활용하여 요약�
 
 ## 배포
 <img width="1067" alt="discord-bot-arch" src="https://github.com/user-attachments/assets/cf43c876-4123-40ac-8268-51cc37be6699" />
-위 다이어그램과 같이 클라우드 환경에서 배포할 수 있으며, 소규모의 경우 저랑 비슷하게 free tier들로 구성하거나 serverless 서비스들로 간단하게 구성이 가능합니다
+위 다이어그램과 같이 클라우드 환경에서 배포할 수 있으며, 24/7 호스팅 & 소규모의 경우 저랑 비슷하게 free tier들로 구성하거나 serverless 서비스들로 간단하게 구성이 가능합니다
 
 
 ## 주요 기능
