@@ -1,0 +1,59 @@
+name: CI/CD Pipeline to AWS EC2
+
+on:
+  push:
+    branches:
+      - main # main 브랜치에 푸시될 때 워크플로우 실행
+
+env:
+  AWS_REGION: ap-northeast-2 # 본인의 AWS Region으로 변경
+  ECR_REPOSITORY: your-ecr-repo-name # 본인의 ECR Repository 이름으로 변경
+  EC2_INSTANCE_ID: i-xxxxxxxxxxxxxxxxx # 본인의 EC2 Instance ID로 변경
+  SSM_DOCUMENT_NAME: AWS-RunShellScript # SSM이 사용할 문서 (쉘 스크립트 실행)
+  DEPLOY_SCRIPT_PATH: /home/ec2-user/deploy.sh # EC2 인스턴스에 배포 스크립트 경로 (아래 단계 3에서 생성)
+  CONTAINER_NAME: my-app # Docker 컨테이너 이름 (배포 스크립트와 일치해야 함)
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # 워크플로우를 실행할 환경
+
+    permissions:
+      id-token: write # OIDC 토큰 발급 권한 필요
+      contents: read # 저장소 내용 읽기 권한 필요
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # 저장소 코드 체크아웃
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/GitHubActionsOIDC-ECR-SSM # 단계 1에서 생성한 IAM 역할 ARN
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build, tag, and push image to Amazon ECR
+        env:
+          # 이미지 태그를 고유하게 (예: 커밋 SHA)
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          # Docker 이미지 빌드
+          docker build -t ${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} .
+          # ECR Repository URI에 맞게 태그 변경
+          docker tag ${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          # ECR에 이미지 푸시
+          docker push ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          echo "ECR_IMAGE_URI=${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}" >> $GITHUB_ENV # 다음 스텝에서 사용할 환경 변수 저장
+
+      - name: Deploy to EC2 via SSM
+        run: |
+          # AWS Systems Manager를 사용하여 EC2 인스턴스에 명령 실행
+          aws ssm send-command \
+            --instance-ids "${{ env.EC2_INSTANCE_ID }}" \
+            --document-name "${{ env.SSM_DOCUMENT_NAME }}" \
+            --parameters 'commands=["sudo bash ${{ env.DEPLOY_SCRIPT_PATH }} ${{ env.ECR_IMAGE_URI }} ${{ env.CONTAINER_NAME }}"]' \
+            --region "${{ env.AWS_REGION }}"
+          echo "SSM deploy command sent."
